@@ -1,0 +1,3 @@
+- name: Install k3s control plane
+  ansible.builtin.import_tasks: control.yml
+  when: "'control' in group_names"

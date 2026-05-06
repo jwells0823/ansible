@@ -1,0 +1,3 @@
+- name: Install k3s worker
+  ansible.builtin.import_tasks: worker.yml
+  when: "'workers' in group_names"

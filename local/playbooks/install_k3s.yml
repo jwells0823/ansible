@@ -1,0 +1,17 @@
+- name: Prepare all nodes
+  hosts: k3s
+  become: true
+  roles:
+    - common
+
+- name: Install k3s control plane
+  hosts: control
+  become: true
+  roles:
+    - k3s_control
+
+- name: Install k3s workers
+  hosts: workers
+  become: true
+  roles:
+    - k3s_worker
