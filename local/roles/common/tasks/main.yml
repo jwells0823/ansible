@@ -1,0 +1,8 @@
+- name: Disable UFW
+  ansible.builtin.import_tasks: disable_ufw.yml
+
+- name: Disable swap
+  ansible.builtin.import_tasks: disable_swap.yml
+
+- name: Install common packages
+  ansible.builtin.import_tasks: packages.yml

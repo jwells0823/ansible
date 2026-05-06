@@ -1,0 +1,12 @@
+- name: Stop and disable ufw
+  ansible.builtin.service:
+    name: ufw
+    state: stopped
+    enabled: false
+  ignore_errors: true
+
+- name: Disable ufw firewall
+  ansible.builtin.command: ufw disable
+  register: ufw_disable
+  changed_when: "'Firewall stopped' in ufw_disable.stdout"
+  ignore_errors: true
